@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>科技网</title>
+		<meta name="keywords" content="山东科技网,科技网">
+		<meta name="description" content="山东科技网">
+				<link href="https://www.kejiwang.com/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://www.kejiwang.com/css/common.css" rel="stylesheet">
+		<!-- 轮播插件 -->
+		<link rel="stylesheet" href="https://www.kejiwang.com/css/owl.carousel.css" />
+		<link rel="stylesheet" href="https://www.kejiwang.com/css/owl.theme.css" />
+
+		<link href="https://www.kejiwang.com/css/animate.min.css" rel="stylesheet">
+		<link href="https://www.kejiwang.com/css/style.css" rel="stylesheet">
+		<link href="https://www.kejiwang.com/css/media-style.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+    <script src="https://www.kejiwang.com/Public/Home/js/html5shiv.min.js"></script>
+    <script src="https://www.kejiwang.com/Public/Home/js/respond.min.js"></script>
+    <![endif]-->
+		<script src="https://www.kejiwang.com/js/jquery.min.js"></script>
+		<script src="https://www.kejiwang.com/js/bootstrap.min.js"></script>
+		<script src="https://www.kejiwang.com/js/echarts.min.js"></script>
+		<!-- 轮播插件 -->
+		<script src="https://www.kejiwang.com/js/owl.carousel.js"></script>
+
+		<script src="https://www.kejiwang.com/js/wow.min.js"></script>
+		<script src="https://www.kejiwang.com/js/jquery.style.js"></script>
+		<script src="https://www.kejiwang.com/js/picturefill.min.js"></script>
+		<script>
+			document.createElement( "picture" );
+        $(function(){
+            var wow = new WOW({
+                boxClass: 'wow',
+                animateClass: 'animated',
+                offset: 0,
+                mobile: true,
+                live: true
+            });
+            wow.init();
+        })
+    </script>
+
+	</head>
+
+	<body>
+
+
+		<div class="he_top fix">
+			<div class="he_top1_1 container fix">
+				<p>欢迎访问科技网！</p>
+				<div class="he1_t1 fix">
+					<div class="he1_t2 fix">						
+						<a href="https://saishi.kejiwang.com/index/user/register.html" target="_blank">注册</a>
+						<span>|</span>
+						<a href="https://saishi.kejiwang.com/index/user/login.html">登录</a>
+					</div>
+				</div>
+				<div class="ser_k1 fix" style="display: block;">
+
+					<form action="" method="get">
+						<input type="text" name="keyword" value="" class="ser_txt1" placeholder="输入关键词搜索" />
+						<input type="submit" class="ser_but1" value="搜索" />
+					</form>
+
+				</div>
+			</div>
+		</div>
+		<div class="he_top2_bg fix">
+			<div class="container fix">
+				<a href="https://www.kejiwang.com" class="logo" title="科技网"><img src="https://www.kejiwang.com/images/logo.png" alt="科技网" /></a>
+			</div>
+		</div>
+		<!-- nav -->
+		<div class="nav_bg1 fix">
+			<div class="nav_d1 container fix">
+				{% for item in nav_bar_list %}
+                    <div class="nav_d2 fix nav_on">
+                        <a href="{{ item.url}}">{{ item.name }}</a>
+                    </div>
+                {% endfor %}
+			</div>
+			<a href="javascript:void(0);" class="menu"><img src="https://www.kejiwang.com/images/menu.png" alt="" /></a>
+		</div>
+		<script>
+			$(window).load(function() {
+				if ($(window).width() > 758) {
+					$('.nav_d3 .qlist').css('margin-left', -$('.nav_d2').width() / 2);
+				} else {}
+			})
+		</script>
+
+
+		<!-- mian -->
+		<div class="main_bg fix">
+			<div class="container fix">
+				<div class="in_bk1 fix">
+					<div class="row fix">
+
+                        <div class="col-md-5 col-sm-5 fix">
+							<div class="in_d2_k fix">
+								<div class="in_tit fix">
+									<div class="qtab fl">
+										<div class="qtab1">
+											<h3>{{nav_bar_list.1.name}}</h3>
+										</div>
+
+									</div>
+									<a href="news">更多></a>
+								</div>
+								<div class="qtab_nr">
+									<div class="qtab_nr1">
+										<ul class="in_ul_1 fix">
+
+                                            {% for article in article_list %}
+                                                <li style="cursor: pointer;"><a href={{ article.url }}>▪
+													{{ article.title }}</a></li>
+                                            {% endfor %}
+
+{#																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-07-18/9155.html">▪#}
+{#													关于开展2022年山东省青少年科技辅导员专业水平认证工作的通知</a></li>#}
+{#																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7933.html">▪#}
+{#													关于成立机器人（无人机）教育等四个专业委员会及发展协会会员的通知</a></li>#}
+{#																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7932.html">▪#}
+{#													首届山东省青少年科技节青少年机器人大赛比赛规则及相关说明</a></li>#}
+{#																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7931.html">▪#}
+{#													关于进一步推进青少年科普教育330工程的通知</a></li>#}
+{#																																	<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13271.html">▪#}
+{#													早上起床，应该先吃早饭还是先刷牙？答案是......</a></li>#}
+{#																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13270.html">▪#}
+{#													电池只能充电500次？别太荒谬！这份真正的充电秘籍建议收藏→</a></li>#}
+{#																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13269.html">▪#}
+{#													人过40岁，“骨头变脆”很要命！这项筛查，一定要做！尤其这 5 类人群……</a></li>#}
+
+										</ul>
+									</div>
+
+								</div>
+
+							</div>
+							<style>
+								.qtab {
+									font-size: 0px;
+									height: 100%;
+								}
+
+								.qtab1 {
+									height: 100%;
+									margin-right: 2px;
+									padding: 0 5px;
+									display: inline-block;
+									*display: inline;
+									*zoom: 1;
+									cursor: pointer;
+								}
+
+								.qtab1 a {
+									color: #333;
+								}
+
+
+
+
+								.qtab_nr {
+									width: 100%;
+								}
+
+								.qtab_nr1 {
+									width: 100%;
+								}
+
+								@media (min-width: 768px) and (max-width: 991px) {
+									.qtab .qtab1:nth-child(3) {
+										display: none;
+									}
+								}
+
+								@media (min-width: 1200px) {
+									.qtab1 {
+										margin-right: 5px;
+										padding: 0 10px;
+									}
+
+									.in_tit h3 {
+										font-size: 22px;
+									}
+								}
+							</style>
+
+
+						</div>
+
+						<div class="col-md-7 col-sm-7 fix">
+							<div class="r_banner fix">
+								<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+									<!-- Indicators -->
+									<ol class="carousel-indicators">
+										<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+																			</ol>
+
+									<div class="carousel-inner" role="listbox">
+
+									    <div class="item active">
+											<a href="https://kehou330ykt.kejiwang.com/login" title="" target="_blank"><img src="https://saishi.kejiwang.com/uploads/kjw123.png" alt=""></a>
+										</div>
+
+										
+									</div>
+
+
+
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+
+				<div class="in_bk1 fix">
+					<div  style="width: 85% ">
+						<div class="col-md-8 col-sm-8 fix">
+							<div class="in_d5_bg fix">
+								<div class="in_tit fix">
+									<h3><h3>{{nav_bar_list.2.name}}</h3></h3>
+									<a href="dt">更多></a>
+								</div>
+                                <div class="qtab_nr">
+									<div class="qtab_nr1">
+										<ul class="in_ul_1 fix">
+																					<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-08-11/9493.html">▪
+													第十三届山东省青少年科学影像节活动获奖作品公示</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-07-18/9155.html">▪
+													关于开展2022年山东省青少年科技辅导员专业水平认证工作的通知</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7933.html">▪
+													关于成立机器人（无人机）教育等四个专业委员会及发展协会会员的通知</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7932.html">▪
+													首届山东省青少年科技节青少年机器人大赛比赛规则及相关说明</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7931.html">▪
+													关于进一步推进青少年科普教育330工程的通知</a></li>
+																																	<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13271.html">▪
+													早上起床，应该先吃早饭还是先刷牙？答案是......</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13270.html">▪
+													电池只能充电500次？别太荒谬！这份真正的充电秘籍建议收藏→</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13269.html">▪
+													人过40岁，“骨头变脆”很要命！这项筛查，一定要做！尤其这 5 类人群……</a></li>
+
+										</ul>
+									</div>
+
+								</div>
+						</div>
+							</div>
+						</div>
+                      <div class="col-md-5 col-sm-5 fix" >
+							<div class="in_d2_k fix">
+								<div class="in_tit fix">
+									<div class="qtab fl">
+										<div class="qtab1">
+											<h3>{{nav_bar_list.1.name}}</h3>
+										</div>
+
+									</div>
+									<a href="news">更多></a>
+								</div>
+								<div class="qtab_nr">
+									<div class="qtab_nr1">
+										<ul class="in_ul_1 fix">
+																					<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-08-11/9493.html">▪
+													第十三届山东省青少年科学影像节活动获奖作品公示</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-07-18/9155.html">▪
+													关于开展2022年山东省青少年科技辅导员专业水平认证工作的通知</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7933.html">▪
+													关于成立机器人（无人机）教育等四个专业委员会及发展协会会员的通知</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7932.html">▪
+													首届山东省青少年科技节青少年机器人大赛比赛规则及相关说明</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7931.html">▪
+													关于进一步推进青少年科普教育330工程的通知</a></li>
+																																	<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13271.html">▪
+													早上起床，应该先吃早饭还是先刷牙？答案是......</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13270.html">▪
+													电池只能充电500次？别太荒谬！这份真正的充电秘籍建议收藏→</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13269.html">▪
+													人过40岁，“骨头变脆”很要命！这项筛查，一定要做！尤其这 5 类人群……</a></li>
+
+										</ul>
+									</div>
+
+								</div>
+
+							</div>
+							<style>
+								.qtab {
+									font-size: 0px;
+									height: 100%;
+								}
+
+								.qtab1 {
+									height: 100%;
+									margin-right: 2px;
+									padding: 0 5px;
+									display: inline-block;
+									*display: inline;
+									*zoom: 1;
+									cursor: pointer;
+								}
+
+								.qtab1 a {
+									color: #333;
+								}
+
+
+
+
+								.qtab_nr {
+									width: 100%;
+								}
+
+								.qtab_nr1 {
+									width: 100%;
+								}
+
+								@media (min-width: 768px) and (max-width: 991px) {
+									.qtab .qtab1:nth-child(3) {
+										display: none;
+									}
+								}
+
+								@media (min-width: 1200px) {
+									.qtab1 {
+										margin-right: 5px;
+										padding: 0 10px;
+									}
+
+									.in_tit h3 {
+										font-size: 22px;
+									}
+								}
+							</style>
+
+
+						</div>
+					</div>
+
+
+				</div>
+
+				<div class="container fix">
+                    <div class="in_bk1 fix">
+					<div class="row fix">
+                        <div class="col-md-7 col-sm-7 fix">
+							<div class="r_banner fix">
+								<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+									<!-- Indicators -->
+									<ol class="carousel-indicators">
+										<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+																			</ol>
+
+									<div class="carousel-inner" role="listbox">
+
+									    <div class="item active">
+											<a href="https://kehou330ykt.kejiwang.com/login" title="" target="_blank"><img src="https://saishi.kejiwang.com/uploads/kjw123.png" alt=""></a>
+										</div>
+
+
+									</div>
+
+
+
+								</div>
+							</div>
+						</div>
+                        <div class="col-md-5 col-sm-5 fix">
+							<div class="in_d2_k fix">
+								<div class="in_tit fix">
+									<div class="qtab fl">
+										<div class="qtab1">
+											<h3>{{nav_bar_list.1.name}}</h3>
+										</div>
+
+									</div>
+									<a href="news">更多></a>
+								</div>
+								<div class="qtab_nr">
+									<div class="qtab_nr1">
+										<ul class="in_ul_1 fix">
+																					<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-08-11/9493.html">▪
+													第十三届山东省青少年科学影像节活动获奖作品公示</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-07-18/9155.html">▪
+													关于开展2022年山东省青少年科技辅导员专业水平认证工作的通知</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7933.html">▪
+													关于成立机器人（无人机）教育等四个专业委员会及发展协会会员的通知</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7932.html">▪
+													首届山东省青少年科技节青少年机器人大赛比赛规则及相关说明</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/2022-04-21/7931.html">▪
+													关于进一步推进青少年科普教育330工程的通知</a></li>
+																																	<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13271.html">▪
+													早上起床，应该先吃早饭还是先刷牙？答案是......</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13270.html">▪
+													电池只能充电500次？别太荒谬！这份真正的充电秘籍建议收藏→</a></li>
+																						<li style="cursor: pointer;"><a href="https://www.kejiwang.com/news/13269.html">▪
+													人过40岁，“骨头变脆”很要命！这项筛查，一定要做！尤其这 5 类人群……</a></li>
+
+										</ul>
+									</div>
+
+								</div>
+
+							</div>
+							<style>
+								.qtab {
+									font-size: 0px;
+									height: 100%;
+								}
+
+								.qtab1 {
+									height: 100%;
+									margin-right: 2px;
+									padding: 0 5px;
+									display: inline-block;
+									*display: inline;
+									*zoom: 1;
+									cursor: pointer;
+								}
+
+								.qtab1 a {
+									color: #333;
+								}
+
+
+
+
+								.qtab_nr {
+									width: 100%;
+								}
+
+								.qtab_nr1 {
+									width: 100%;
+								}
+
+								@media (min-width: 768px) and (max-width: 991px) {
+									.qtab .qtab1:nth-child(3) {
+										display: none;
+									}
+								}
+
+								@media (min-width: 1200px) {
+									.qtab1 {
+										margin-right: 5px;
+										padding: 0 10px;
+									}
+
+									.in_tit h3 {
+										font-size: 22px;
+									}
+								}
+							</style>
+
+
+						</div>
+
+
+
+
+
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- footer -->
+				<div class="footer_bg fix">
+			<div class="container fix">
+				<div class="fot_d1 fix">
+					<a href="">网站地图</a>
+					<span>|</span>
+					<a href="">网站声明</a>
+					<span>|</span>
+					<a href="">关于我们</a>
+					<span>|</span>
+					<a href="https://www.kejiwang.com/lxwm">联系我们</a>
+				</div>
+				<!--<h4><span>地址：****************</span> <span>电话:***-********</span></h4>-->
+				<p><span>科技网&nbsp;&nbsp;Copyright © 2020 All rights reserved</span> <span><a href="https://beian.miit.gov.cn/">鲁ICP备2021005201号-1</a></span></p>
+			</div>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3ed68bd086d6c7b888e1a586c7aa0ab1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+		</div>
+
+
+
+		<script type="text/javascript">
+			$(".r_banner .owl-carousel").owlCarousel({
+				navigation: true,
+				slideSpeed: 300,
+				paginationSpeed: 400,
+				singleItem: true,
+				dots: false,
+				navigationText: false,
+				autoPlay: true
+			});
+			40
+		</script>
+		</body>
+</html>
