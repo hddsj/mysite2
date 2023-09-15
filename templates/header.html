@@ -1,0 +1,46 @@
+{% load static %}
+<!-- 引入bootstrap的css文件 -->
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<div style="background-color: #9d9d9d">
+    <h6 style="display: inline;margin-left: 200px">欢迎访问科技网！</h6>
+    <a href="{% url "userprofile:register"%}?next={{ request.path }}" style="margin-left: 900px">注册</a>
+    <span>|</span>
+    <a href="{% url 'userprofile:login'%}?next={{ request.path }}">登录</a>
+</div>
+ <img src="static/header.png" alt="">
+<!-- 定义导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-dark "style="background-color: #1476c1;">
+  <div class=" container">
+    <!-- 导航入口 -->
+    <div >
+       <ul class="nav nav-pills" style="border-bottom-left-radius: 100px">
+         <div class="nav-item mr-lg-5">
+                <a href="/" style="color: #FFFFFF;">首页</a>
+         </div>
+         <div class="nav-item mr-lg-5">
+              <a href="{% url 'article:happen' %}" style="color: #FFFFFF;margin-left: 10px">|&nbsp;&nbsp;&nbsp;&nbsp;近视的发生&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+          </div>
+         <div class="nav-item mr-lg-5">
+              <a href="{% url 'article:prevent' %}" style="color: #FFFFFF;margin-left: 10px">|&nbsp;&nbsp;&nbsp;&nbsp;近视的预防&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+          </div>
+         <div class="nav-item mr-lg-5">
+              <a href="{% url 'article:appliance' %}" style="color: #FFFFFF;margin-left: 10px">|&nbsp;&nbsp;&nbsp;&nbsp;防近视器材&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+          </div>
+         <div class="nav-item mr-lg-5">
+              <a href="{% url 'article:news' %}" style="color: #FFFFFF;margin-left: 10px">|&nbsp;&nbsp;&nbsp;&nbsp;防近视要闻&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+          </div>
+           <div class="nav-item mr-lg-5">
+              <a href="{% url 'article:about' %}" style="color: #FFFFFF;margin-left: 10px">|&nbsp;&nbsp;&nbsp;&nbsp;关于我们&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+          </div>
+        </ul>
+    </div>
+      {#  导航栏的右边提示框#}
+{#    {% if user.is_authenticated %}#}
+{#        <span class="navbar-text">欢迎您：</span>#}
+{#        <span class="navbar-text">{{ user.username }}</span>#}
+{#        {% include 'setting_nav.html' %}#}
+{#    {% else %}#}
+{#      <a href="{% url 'userprofile:login' %}?next={{ request.path }}"><button type="button" class="btn btn-primary">请登录</button></a>#}
+{#    {% endif %}#}
+  </div>
+</nav>

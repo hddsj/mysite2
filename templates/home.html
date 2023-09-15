@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load static %}
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    科技网
+{% endblock title %}
+<!-- 写入 base.html 中定义的 content -->
+<html>
+    <body>
+    {% block content %}
+        <div class="container bg-white" style="margin-top: 30px" >
+            <div class="row"style="height: 20vw">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h4 >近视的发生</h4>
+                        </div>
+                        <small style="line-height: 3;margin-left: 80px">更多</small>
+                    </div>
+                    <hr color="blue"style="margin-top: 0px;">
+                    {% include "home_list.html" with article_sub_list=happen_article_sub_list%}
+                </div>
+
+                <div class="col-md-5" style="padding: 15px">
+                    {% include "slide_page.html" %}
+                </div>
+            </div>
+
+            <div class="row"style="height: 20vw;margin-top: 30px">
+                <div class="col-md-6">
+                    <div class="row" >
+                        <div class="col-md-9">
+                            <h4>近视的预防</h4>
+                        </div>
+
+                          <small style="line-height: 3;margin-left: 80px">更多</small>
+
+                    </div>
+                      <hr color="blue"style="margin-top: 0px;">
+                     {% include "home_list.html" with article_sub_list=prevent_article_sub_list%}
+                </div>
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h4>防近视器材</h4>
+                        </div>
+                        <small style="line-height: 3;margin-left: 30px">更多</small>
+                    </div>
+                      <hr color="blue"style="margin-top: 0px;">
+                     {% include "home_list.html" with article_sub_list=appliance_article_sub_list%}
+                </div>
+            </div>
+
+            <div class="row"style="margin-bottom: 10px;">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6"style="padding: 0;margin: 0;padding-left: 1vw">
+                            {% include "small_slide_page.html" %}
+                        </div>
+                        <div class="col-md-6"style="padding: 0;margin: 0;padding-right: 1vw">
+                            {% include "small_slide_page.html" %}
+                        </div>
+                    </div>
+                    {% include "slide_page.html" %}
+                </div>
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h4>防近视要闻</h4>
+                        </div>
+                        <small style="line-height: 3;margin-left: 60px">更多</small>
+                    </div>
+                      <hr color="blue"style="margin-top: 0px;">
+                     {% include "home_list.html" with article_sub_list=news_article_sub_list%}
+                </div>
+            </div>
+        </div>
+    {% endblock content %}
+    </body>
+</html>

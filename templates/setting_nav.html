@@ -1,0 +1,11 @@
+<!-- Example single danger button -->
+<div class="btn-group"style="margin-left: 100px">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    设置
+  </button>
+  <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">个人资料修改</a>
+      <a class="dropdown-item" href="{% url 'article:article_create' %}">写发布</a>
+      <a class="dropdown-item" href="{% url "userprofile:logout" %}?next={{ request.path }}">退出登录</a>
+  </div>
+</div>

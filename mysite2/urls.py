@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from app01.views import view,show_article
+from article.views import view
 urlpatterns = [
-    path('', view),
-    path('article/',include('app01.urls',namespace='app01')),
+    path('', view,name='home'),
+    path('admin/',admin.site.urls),
+    path('article/', include('article.urls', namespace='article')),
+    # 用户管理
+    path('userprofile/', include('userprofile.urls', namespace='userprofile')),
+    # 评论
+    path('comment/', include('comment.urls', namespace='comment')),
+
+    path(r'mdeditor/', include('mdeditor.urls')),
 ]

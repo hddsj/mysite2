@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+    {% block content %}
+
+        <div class="container border" style="height: 700px">
+        <p id="currentPath">您当前的位置是:</p>
+        <script>
+            // 获取当前页面的路径部分
+            var currentPath = window.location.pathname;
+            var parts = currentPath.split("/").filter(part => part !== ""); // 将字符串分割成数组，然后过滤掉空字符串
+            var firstPart = parts[0];
+            var secondPart = parts[1];
+            if (firstPart === "article"){
+                firstPart = "首页"
+            }
+            if(secondPart === "happen"){
+                secondPart = "近视的发生"
+            }
+             if(secondPart === "prevent"){
+                secondPart = "近视的预防"
+            }
+             if(secondPart === "appliance"){
+                secondPart = "防近视器材"
+            }
+              if(secondPart === "news"){
+                secondPart = "近视的要闻"
+            }
+               if(secondPart === "about"){
+                secondPart = "关于我们"
+            }
+            // 显示路径
+            document.getElementById("currentPath").textContent = "您当前的位置是:"+firstPart + ">" + secondPart;
+        </script>
+            {#对文章进行列表展示#}
+            <ul class="list-group list-group-flush">
+                {% for article in articles %}
+                    <li style="margin: 5px 30px">
+                     <!-- 同样改写 href -->
+                        <a href="{% url 'article:article_detail_show' article.id %}"style="color: #000000;">{{ article.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- 页码导航 -->
+        <div class="pagination row">
+            <div class="m-auto">
+                <span class="step-links">
+                    <!-- 如果不是第一页，则显示上翻按钮 -->
+                    {% if articles.has_previous %}
+                        <a href='?page=1' class="btn btn-secondary">首页</a>
+                         <a href="?page={{ article_list.previous_page_number }}"
+                           class="btn btn-secondary">
+                            上一页
+                        </a>
+                        <a href="?page={{ article_list.previous_page_number }}"
+                           class="btn btn-secondary"
+                        >
+                            {{ articles.previous_page_number }}
+                        </a>
+                    {% endif %}
+                    <!-- 当前页面 -->
+                    <span class="current btn btn-danger btn-lg">
+                        {{ articles.number }}
+                    </span>
+
+                    <!-- 如果不是最末页，则显示下翻按钮 -->
+                    {% if articles.has_next %}
+                        <a href="?page={{ articles.next_page_number }}"
+                           class="btn btn-secondary">
+                            {{ articles.next_page_number }}
+                        </a>
+                          <a href="?page={{ articles.next_page_number }}"
+                           class="btn btn-secondary">
+                            下一页
+                        </a>
+                        <a href='?page={{ articles.num_pages }}'
+                         class="btn btn-secondary">尾页</a>
+                    {% endif %}
+
+                </span>
+            </div>
+        </div>
+        {% endblock %}

@@ -1,0 +1,12 @@
+<div class="row">
+    {#对文章进行列表展示#}
+    <ul class="list-group list-group-flush">
+        {% for article in article_sub_list %}
+            <li  style="margin: 5px 30px">
+             <!-- 同样改写 href -->
+                <a href="{% url 'article:article_detail_show' article.id %}"style="color: #000000;">{{ article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+</div>
